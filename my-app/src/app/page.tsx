@@ -7,13 +7,13 @@ import NavbarProduct from "@/components/navbar";
 import {getCookies } from "next-client-cookies/server";
 import BannerAds from "@/components/bannerAdsKost";
 async function getDataKost() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL_SERVER}/api/carrousels?category=kost`, { cache: 'no-store' });
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL_SERVER}/api/carrousels?category=Ruko`, { cache: 'no-store' });
   const data = await response.json();
   return data.slice(0, 6); 
 }
 
 async function getDataKontrakan() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL_SERVER}/api/carrousels?category=kontrakan`, { cache: 'no-store' });
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL_SERVER}/api/carrousels?category=Kontrakan`, { cache: 'no-store' });
   const data = await response.json();
   return data.slice(0, 6); 
 }

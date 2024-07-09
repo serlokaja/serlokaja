@@ -30,10 +30,10 @@ export default function CardPengajuan({ property } : {property: any}) {
         <div className="flex-1 relative">
           <div className="flex items-center mt-2">
             <button className="flex items-center justify-center text-black font-semibold py-0 px-1 mt-1 mb-2 rounded-lg border border-gray-300">
-              {property.type}
+              {property.kategori}
             </button>
-            <GiRoundStar className={`m-2 w-4 h-4 text-orange-500`} />{" "}
-            <span className="text-orange-500">0</span>
+            <GiRoundStar className={`m-2 w-4 h-4 text-blue-500`} />{" "}
+            <span className="text-blue-500">0</span>
           </div>
           {(() => {
             if (property.statusPengajuan === "Menunggu") {

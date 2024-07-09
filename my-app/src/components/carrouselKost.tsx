@@ -6,9 +6,9 @@ export default function CarrouselKost({ kosts }: { kosts: any }) {
   return (
     <div className="pt-10 pb-10">
       <div className="flex justify-between text-black pb-3">
-        <h1 className="text-xl font-sans font-bold">Kost Terlaris :</h1>
+        <h1 className="text-xl font-sans font-bold">Ruko/Tempat Usaha Terlaris :</h1>
         <Link
-          href="/kost"
+          href="/tempat-usaha"
           className="text-sm text-gray-500 mr-2 hover:text-black"
         >
           View all ❯
@@ -31,7 +31,7 @@ export default function CarrouselKost({ kosts }: { kosts: any }) {
               key={index}
               className="carousel-item flex-shrink-0 flex-col bg-white rounded-md w-72"
             >
-              <Link href={`/kost/${value.slug}`}>
+              <Link href={`/tempat-usaha/${value.slug}`}>
                 <Image
                   src={value.thumbnail}
                   className="rounded-md w-full h-48 object-cover"
@@ -42,7 +42,7 @@ export default function CarrouselKost({ kosts }: { kosts: any }) {
                 <div className="mt-2 mb-5">
                   <div className="flex items-center">
                     <button className="flex items-center justify-center text-black font-semibold py-0 px-1 mt-1 mb-2 rounded-lg border border-gray-300">
-                      {value.type}
+                      {value.kategori}
                     </button>
                     <GiRoundStar className="m-2 w-4 h-4 text-blue-600" />
                     <span className="text-blue-600">0</span>

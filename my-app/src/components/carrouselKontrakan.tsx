@@ -41,7 +41,7 @@ export default function CarrouselKost({ kontrakans } : {kontrakans :  any}) {
                 <div className="mt-2 mb-5">
                   <div className="flex items-center">
                     <button className="flex items-center justify-center text-black font-semibold py-0 px-1 mt-1 mb-2 rounded-lg border border-gray-300">
-                      {value.type}
+                      {value.kategori}
                     </button>
                     <GiRoundStar className="m-2 w-4 h-4 text-blue-600" />
                     <span className="text-blue-600">0</span>
