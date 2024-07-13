@@ -8,7 +8,7 @@ export default function HeroProfileWeb() {
           SERLOK AJA : Teman setia pencarianmu!
         </h1>
         <p className="text-xl text-black mb-8">
-        Temukan ribuan pilihan kos di seluruh Indonesia bersama <span className="font-bold text-blue-600 ">SERLOK AJA</span>
+        Temukan ribuan pilihan Tempat Usaha atau Kontrakan di seluruh Indonesia bersama <span className="font-bold text-blue-600 ">SERLOK AJA</span>
         </p>
         <div className="flex items-center justify-center">
           <Image src={Logo} alt="Kosyuk logo" width={90} height={90} />
