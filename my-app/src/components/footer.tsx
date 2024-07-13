@@ -30,7 +30,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Promosikan Kost Anda
+                  Promosikan Properti Anda
                 </a>
               </li>
               <li>
@@ -45,7 +45,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Sewa Kos untuk Perusahaan
+                  Sewa Tempat Usaha untuk Perusahaan
                 </a>
               </li>
             </ul>
