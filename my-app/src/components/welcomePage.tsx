@@ -17,7 +17,7 @@ export default function WelcomePage() {
         Dapatkan Penyewa Lebih Cepat dengan <span className="font-bold text-blue-600">SERLOK AJA</span>
         </h1>
         <p className="text-base text-black mb-3">
-        Masih mencari cara efektif untuk memasarkan kost Anda? SERLOK AJA solusinya! Daftarkan properti Anda dan temukan penyewa lebih cepat. Proses pendaftaran mudah dan gratis!
+        Masih mencari cara efektif untuk memasarkan properti Anda? SERLOK AJA solusinya! Daftarkan properti Anda dan temukan penyewa lebih cepat. Proses pendaftaran mudah dan gratis!
         </p>
         
         <p className="mt-5 text-black">
@@ -28,7 +28,7 @@ export default function WelcomePage() {
           >
             Daftarkan
           </a>{" "}
-          kost anda sekarang
+          properti anda sekarang
         </p>
         <div className="flex items-center justify-center mt-10">
           <Image src={Logo} alt="Kosyuk logo" width={150} height={150} />
