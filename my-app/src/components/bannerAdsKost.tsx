@@ -19,10 +19,10 @@ export default function BannerAdsKost() {
       />
       <div className="relative flex-1 p-4 text-center z-10 bg-opacity-0 bg-white ">
         <h2 className="text-2xl font-bold text-black mb-3">
-          Hemat Waktu dengan Aplikasi Pencari Kost Terbaik!
+          Hemat Waktu dengan Aplikasi Pencari Teempat Usaha atau Kontrakan Terbaik!
         </h2>
         <p className="text-base text-black">
-          Tidak punya waktu untuk berkeliling mencari kost? <span className="text-blue-600 font-bold font-sans">SERLOK AJA</span> hadir untuk membantumu. Dengan fitur pencarian yang mudah dan cepat, kamu bisa menemukan kost yang sesuai dengan kebutuhanmu tanpa harus keluar rumah. nikmati kemudahannya!
+          Tidak punya waktu untuk berkeliling mencari Tempat Usaha atau Kontrakan? <span className="text-blue-600 font-bold font-sans">SERLOK AJA</span> hadir untuk membantumu. Dengan fitur pencarian yang mudah dan cepat, kamu bisa menemukan Tempat Usaha atau Kontrakan yang sesuai dengan kebutuhanmu tanpa harus keluar rumah. nikmati kemudahannya!
         </p>
       </div>
     </div>
