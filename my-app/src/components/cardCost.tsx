@@ -4,10 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { GiRoundStar } from "react-icons/gi";
 
-export default function CardKost({ kosts } : { kosts : any}) {
+export default function CardKost({ kosts }: { kosts: any }) {
 
   const kecStartIndex = kosts.alamat.indexOf("Kec.");
-
   let kecText = "";
 
   if (kecStartIndex !== -1) {
@@ -16,38 +15,35 @@ export default function CardKost({ kosts } : { kosts : any}) {
       .split(",")[0]
       .replace("Kec. ", "");
   }
+
   return (
-    <>
-      <div className="card bg-white px-1 w-1/4 relative overflow-hidden transform transition-transform duration-500 hover:shadow-lg flex flex-col mt-5">
-        <Link href="{`/products/${product.slug}`}">
+    <div className="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-500 hover:shadow-2xl flex flex-col mt-5">
+      <Link href={`/products/${kosts.slug}`}>
+        <a>
           <Image
-            src={kosts?.thumbnail}
-            className="rounded-md w-full h-48 object-cover"
-            alt="Carousel Item"
+            src={kosts?.thumbnail || "/placeholder.jpg"}
+            className="w-full h-48 object-cover"
+            alt={kosts.nama}
             width={500}
-            height={500}
+            height={300}
           />
-        </Link>
-        <div className="flex-1 relative">
-          <div className="flex items-center mt-2">
-            <button className="flex items-center justify-center text-black font-semibold py-0 px-1 mt-1 mb-2 rounded-lg border border-gray-300">
-              {kosts.type}
-            </button>
-            <GiRoundStar className={`m-2 w-4 h-4 text-orange-500`} />{" "}
-            <span className="text-orange-500">0</span>
+        </a>
+      </Link>
+      <div className="p-4 flex-1 flex flex-col">
+        <div className="flex items-center justify-between mb-2">
+          <button className="text-white bg-blue-500 hover:bg-blue-600 font-semibold py-1 px-3 rounded-lg border border-transparent">
+            {kosts.type}
+          </button>
+          <div className="flex items-center">
+            <GiRoundStar className="text-orange-500" />
+            <span className="text-orange-500 font-semibold">0</span>
           </div>
-          <h1 className="font-sans text-black">{kosts.nama}</h1>
-            <h1 className="font-sans text-black font-semibold text-justify overflow-hidden whitespace-nowrap overflow-ellipsis max-w-[300px]">
-              {kecText}
-            </h1>
-            <h1 className="font-sans text-gray-400 text-xs text-justify overflow-hidden whitespace-nowrap overflow-ellipsis max-w-[300px]">
-              {kosts.fasilitas.join(", ")}
-            </h1>
-            <h1 className="font-sans text-lg font-semibold text-black">
-              Rp. {kosts.harga.toLocaleString("id-ID")}
-            </h1>
         </div>
+        <h1 className="text-lg font-semibold text-black mb-1">{kosts.nama}</h1>
+        <p className="text-gray-600 text-sm mb-2 whitespace-nowrap overflow-hidden text-ellipsis">{kecText}</p>
+        <p className="text-gray-500 text-xs mb-2 whitespace-nowrap overflow-hidden text-ellipsis">{kosts.fasilitas.join(", ")}</p>
+        <h2 className="text-xl font-bold text-black">Rp. {kosts.harga.toLocaleString("id-ID")}</h2>
       </div>
-    </>
+    </div>
   );
 }
