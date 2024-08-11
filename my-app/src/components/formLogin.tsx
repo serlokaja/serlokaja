@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 export default function FormLogin() {
   const pathname = usePathname();
   const router = useRouter();
@@ -19,18 +18,17 @@ export default function FormLogin() {
     password: "",
   });
 
-  // const urlLocalStorage = localStorage.getItem('pathname');
-  const string : any = ""
-  const [urlLocalStorage, setUrlLocalStorage] = useState(string)
-  useEffect(()=>{
-    setUrlLocalStorage(localStorage.getItem('pathname'))
-  },[])
-  
+  const string: any = "";
+  const [urlLocalStorage, setUrlLocalStorage] = useState(string);
 
-  const handleLogin = async (e : any) => {
+  useEffect(() => {
+    setUrlLocalStorage(localStorage.getItem('pathname'));
+  }, []);
+
+  const handleLogin = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     const email = formData.email;
     const password = formData.password;
 
@@ -53,7 +51,6 @@ export default function FormLogin() {
     );
     const result = await response.json();
 
-
     if (!response.ok) {
       toast.error("Email / Password salah!", {
         position: "top-center",
@@ -69,15 +66,14 @@ export default function FormLogin() {
       return router.push(pathname === "/login/pencari" ? `/login/pencari?error=${result.message}` : `/login/pemilik?error=${result.message}`);
     }
 
-    if (urlLocalStorage){
+    if (urlLocalStorage) {
       router.push(urlLocalStorage);
       localStorage.removeItem('pathname');
       router.refresh();
       return;
-    }else{
+    } else {
       router.push(pathname === "/login/pencari" ? "/" : "/dashboard-pemilik");
     }
-
   };
 
   const handleChange = (e: any) => {
@@ -90,80 +86,78 @@ export default function FormLogin() {
 
   return (
     <>
-      <div className="bg-gray-100 text-gray-900 flex justify-center">
-        <div className="bg-white shadow flex justify-center flex-1">
-          <div className="lg:w-1/2 mt-20 xl:w-5/12 sm:p-12">
-            <h2 className="text-2xl font-bold">
+      <div className="bg-gray-100 text-gray-900 flex justify-center items-center min-h-screen">
+        <div className="bg-white shadow-lg rounded-lg flex flex-col lg:flex-row justify-center w-full max-w-4xl p-5 lg:p-10">
+          <div className="lg:w-1/2 xl:w-5/12 sm:p-6">
+            <h2 className="text-3xl font-semibold text-center lg:text-left mb-6">
               {pathname === "/login/pencari"
-                ? "Login Sebagai Pencari Kost : "
-                : "Login Sebagai Pemilik Kost : "}{" "}
+                ? "Login Sebagai Pencari Kost"
+                : "Login Sebagai Pemilik Kost"}
             </h2>
-            <div className="flex flex-col items-center">
-              <form onSubmit={handleLogin} className="w-full flex-1 mt-8">
-                <div className="flex flex-col mb-4">
-                  <label className="text-sm text-gray-600" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    className="w-full mt-2 px-8 py-4 rounded-lg font-medium bg-slate-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-slate-100 focus:bg-white appearance-none"
-                    type="email"
-                    id="email"
-                    name="email"
-                    onChange={handleChange}
-                    placeholder="Email Address"
-                    required
-                  />
-                </div>
-                <div className="flex flex-col mb-4">
-                  <label className="text-sm text-gray-600" htmlFor="password">
-                    Password
-                  </label>
-                  <input
-                    className="w-full mt-2 px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                    type="password"
-                    id="password"
-                    name="password"
-                    onChange={handleChange}
-                    placeholder="Password"
-                    required
-                  />
-                </div>
-                {isloading ? (
-                  <button
-                    type="submit"
-                    className="text-center mt-10 mb-5 w-full max-w-full font-bold shadow-sm rounded-lg py-3 bg-blue-600 text-white flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
-                  >
-                    <span className="ml-1 text-white">Loading...</span>
-                  </button>
-                ) : (
-                  <button
-                    className="text-center mt-10 mb-5 w-full max-w-full font-bold shadow-sm rounded-lg py-3 bg-blue-600 text-white flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
-                    type="submit"
-                  >
-                    Masuk
-                  </button>
-                )}
-              </form>
-              <p className="text-sm text-gray-600 text-center">
-                Belum punya akun?{" "}
-                <Link
-                  href={
-                    pathname === "/login/pencari"
-                      ? "/register/pencari"
-                      : "/register/pemilik"
-                  }
-                  className="hover:text-blue-600 font-bold"
+            <form onSubmit={handleLogin} className="w-full">
+              <div className="flex flex-col mb-6">
+                <label className="text-sm font-medium text-gray-700" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  className="w-full mt-2 px-4 py-3 rounded-lg font-medium bg-gray-100 border border-gray-300 placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:bg-white"
+                  type="email"
+                  id="email"
+                  name="email"
+                  onChange={handleChange}
+                  placeholder="Email Address"
+                  required
+                />
+              </div>
+              <div className="flex flex-col mb-6">
+                <label className="text-sm font-medium text-gray-700" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  className="w-full mt-2 px-4 py-3 rounded-lg font-medium bg-gray-100 border border-gray-300 placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:bg-white"
+                  type="password"
+                  id="password"
+                  name="password"
+                  onChange={handleChange}
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              {isloading ? (
+                <button
+                  type="submit"
+                  className="text-center w-full py-3 rounded-lg bg-blue-600 text-white font-semibold shadow-md transition duration-300 ease-in-out hover:bg-blue-700"
                 >
-                  Daftar
-                </Link>
-              </p>
-            </div>
+                  Loading...
+                </button>
+              ) : (
+                <button
+                  className="text-center w-full py-3 rounded-lg bg-blue-600 text-white font-semibold shadow-md transition duration-300 ease-in-out hover:bg-blue-700"
+                  type="submit"
+                >
+                  Masuk
+                </button>
+              )}
+            </form>
+            <p className="text-sm text-gray-600 text-center mt-6">
+              Belum punya akun?{" "}
+              <Link
+                href={
+                  pathname === "/login/pencari"
+                    ? "/register/pencari"
+                    : "/register/pemilik"
+                }
+                className="text-blue-600 font-bold hover:underline"
+              >
+                Daftar
+              </Link>
+            </p>
           </div>
-          <div className="hidden mt-5 mb-10 lg:flex lg:w-1/2 items-center justify-center">
+          <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
             <Image
               src={login}
               alt="Registration Image"
-              className="object-cover rounded-lg h-[600px]"
+              className="object-cover rounded-lg h-full max-h-[600px] w-full"
             />
           </div>
         </div>
