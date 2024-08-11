@@ -88,7 +88,7 @@ export default function ContentDetailKontrakan({ kontrakan, isLogin, images, cur
                           className="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg font-bold flex items-center justify-center hover:bg-green-500"
                           onClick={openModal}
                         >
-                          <span>Hubungi Pemilik</span>
+                          <span>Hubungi Admin</span>
                           <FaWhatsapp className="ml-2" />
                         </button>
                       </div>
